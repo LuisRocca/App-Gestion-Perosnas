@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+/* @import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities'; */
+
+
+body {
+    --bs-body-font-family: var(--bs-font-monospace);
+    --bs-body-line-height: 1.4;
+    --bs-body-bg: var(--bs-gray-100);
+  }
+  
+  .table {
+    --bs-table-color: var(--bs-gray-600);
+    --bs-table-bg: var(--bs-gray-100);
+    --bs-table-border-color: transparent;
+  }
