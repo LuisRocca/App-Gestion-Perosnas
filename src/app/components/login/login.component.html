@@ -1,1 +1,39 @@
 
+
+<!-- <div class="container"> -->
+<!-- <form class="item"  (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input [(ngModel)]="username" type="text" class="form-control" id="username" name="username"  >
+    </div>
+    <div class="form-group">
+      <label for="password" >Password</label>
+      <input [(ngModel)]="password" type="password" class="form-control" id="password" name="password" >
+    </div>
+    <button type="submit" class="btn btn-primary">Sign in</button>
+  </form> -->
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+  
+      <!-- Icon -->
+      <div class="fadeIn first">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/NewTux.svg" id="icon" alt="User Icon" />
+      </div>
+  
+      <!-- Login Form -->
+      <form (ngSubmit)="onSubmit()" > 
+        <input type="text" [(ngModel)]="username" id="login" class="fadeIn second" name="login" placeholder="login">
+        <input type="text" [(ngModel)]="password" id="password" class="fadeIn third" name="login" placeholder="password">
+        <input type="submit" class="fadeIn fourth" value="Log In">
+      </form>
+  
+      <!-- Remind Passowrd -->
+      <div id="formFooter">
+        <a class="underlineHover" href="#">Forgot Password?</a>
+      </div>
+  
+    </div>
+  </div>
+<!-- </div> -->
+

@@ -7,7 +7,8 @@ import { LoginComponent } from './components/login/login.component';
 import { NavbardComponent } from './components/navbard/navbard.component';
 import { HomeComponent } from './pages/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
-
+import { ErrorComponent } from './components/error/error.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,13 +17,16 @@ import { FooterComponent } from './components/footer/footer.component';
     NavbardComponent,
     HomeComponent,
     FooterComponent,
-
+    ErrorComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+}
