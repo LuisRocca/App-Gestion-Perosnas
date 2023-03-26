@@ -1,5 +1,6 @@
 import { Component, OnInit,} from '@angular/core';
 import { DataService } from 'src/app/data.service';
+import { I18n } from "i18n-js";
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,15 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
+    const i18n = new I18n({
+      en: {
+        hello: "Hi!",
+      },
+      "pt-BR": {
+        hello: "Olá!",
+      },
+    })
+    console.log('este soy' , i18n)
   }
 
   onSubmit() {

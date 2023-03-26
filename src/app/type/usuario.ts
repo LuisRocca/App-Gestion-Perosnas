@@ -1,0 +1,23 @@
+export type detailUser = {
+    SystemId?: null,
+    Area?: String,
+    PublicId?: 161,
+    CountryCode?: String,
+    CountryName?: String,
+    Name?: String,
+    Email?: String,
+    JobTitle?: String,
+    PhoneNumber?: String,
+    PhoneCode?: String,
+    PhoneCodeAndNumber?: String,
+    LastActivityUtc?: String,
+    LastActivity?: String,
+    SubscriptionDate?: String,
+    SubscriptionMethod?: String,
+    SubscriptionState?: String,
+    SubscriptionStateDescription?: String,
+    Topics?: [],
+    Activity?: String,
+    ConnectionState?: Number,
+    Id?: Number
+  } 

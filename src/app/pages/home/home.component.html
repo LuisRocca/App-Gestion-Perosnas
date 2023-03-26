@@ -15,8 +15,8 @@
         <td>{{client.Email}}</td>
         <td>{{client.PhoneCodeAndNumber}}</td>
         <td>
-        <button type="button" class="btn btn-outline-success " (click)="goToDetail(client.Id)">Detalle</button>
-        <button type="button" class="m-3 btn btn-outline-info" (click)="deleteClient(client.Id)">Modificar</button>
+        <button type="button" class="btn btn-outline-success " (click)="goToModificate(client.Id)">Modificar</button>
+        <button type="button" class="m-3 btn btn-outline-info" (click)="open(content,client.Id)">Detalle</button>
         <button type="button" class="m-3 btn btn-outline-danger" (click)="deleteClient(client.Id)">Borrar</button>
       </td>
       </tr>
@@ -32,5 +32,49 @@
     </tbody>
   </table>
 
+  <ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Título del modal</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="card" style="width: 18rem;">
+        <ul class="list-group list-group-flush">
+          "SystemId": null,
+
+          <li class="list-group-item">Area : {{clientdetail.Area}}</li>
+          <li class="list-group-item">PublicId : {{clientdetail.PublicId}}</li>
+          <li class="list-group-item">CountryCode : {{clientdetail.CountryCode}}</li>
+          <li class="list-group-item">CountryName : {{clientdetail.CountryName}}</li>
+          <li class="list-group-item">Name : {{clientdetail.Name}}</li>
+          <li class="list-group-item">Email : {{clientdetail.Email}}</li>
+          <li class="list-group-item">JobTitle : {{clientdetail.JobTitle}}</li>
+          <li class="list-group-item">PhoneNumber : {{clientdetail.PhoneNumber}}</li>
+          <li class="list-group-item">PhoneCode : {{clientdetail.PhoneCode}}</li>
+          <li class="list-group-item">PhoneCodeAndNumber : {{clientdetail.PhoneCodeAndNumber}}</li>
+          <li class="list-group-item">LastActivityUtc : {{clientdetail.LastActivityUtc}}</li>
+          <li class="list-group-item">LastActivity : {{clientdetail.LastActivity}}</li>
+          <li class="list-group-item">SubscriptionDate : {{clientdetail.SubscriptionDate}}</li>
+          <li class="list-group-item">SubscriptionMethod : {{clientdetail.SubscriptionMethod}}</li>
+          <li class="list-group-item">SubscriptionState : {{clientdetail.SubscriptionState}}</li>
+          <li class="list-group-item">SubscriptionStateDescription : {{clientdetail.SubscriptionStateDescription}}</li>
+          <li class="list-group-item">Topics : {{clientdetail.Topics}}</li>
+          <li class="list-group-item">Activity : {{clientdetail.Activity}}</li>
+          <li class="list-group-item">ConnectionState : {{clientdetail.ConnectionState}}</li>
+          <li class="list-group-item">Id : {{clientdetail.Id}}</li>
+
+        </ul>
+        <div class="card-footer">
+          Card footer
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="modal.dismiss('cancelar')">Cancelar</button>
+      <button type="button" class="btn btn-primary" (click)="modal.close('aceptar')">Aceptar</button>
+    </div>
+  </ng-template>
 
 <app-footer></app-footer>

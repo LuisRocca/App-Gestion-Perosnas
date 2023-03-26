@@ -10,6 +10,9 @@ export class DataService {
     countries = Array();
     sesionState : Number = 0;
     bearerToken : String = 'Bearer'
+    clientDetail : object = {}
+    modafiFalg : Boolean = false;
+    idClientModifi : String = ''
   // private apiUrl = 'https://jsonplaceholder.typicode.com/todos';
   constructor(private router: Router) { }
 
@@ -85,7 +88,8 @@ export class DataService {
       .then( async response => {
         const Data = await response.json()
         console.log(Data, 'este es mi console.log')
-        this.clients = Data
+        this.clientDetail = Data
+        // this.clients = Data
       })
       .catch(error => {
         console.error('Error en la solicitud fetch:', error);
@@ -100,13 +104,13 @@ export class DataService {
         'Authorization': `Bearer ${this.bearerToken}`,
         'Content-Type': 'application/json;charset=utf-8'
       },
-      body:JSON.stringify({Subscribers: subscribers }) 
+      body:JSON.stringify({Subscribers: subscribers}) 
     }
         fetch("https://lab.app.invertebrado.co/api/subscribers/", options) 
       .then( async response => {
-        const  {Data} = await response.json()
+        const Data = await response.json()
         console.log(Data, 'este es mi console.log')
-        this.clients = Data
+        this.getClients()
       })
       .catch(error => {
         // Manejo de errores de la solicitud Fetch
@@ -121,13 +125,13 @@ export class DataService {
         'Authorization': `Bearer ${this.bearerToken}`,
         'Content-Type': 'application/json;charset=utf-8'
       },
-      body:JSON.stringify({ subscriber }) 
+      body:JSON.stringify( subscriber ) 
     }
         fetch(`https://lab.app.invertebrado.co/api/subscribers/${id}`, options) 
       .then( async response => {
-        const  {Data} = await response.json()
+        const  Data = await response.json()
         console.log(Data, 'este es mi console.log')
-        this.clients = Data
+        this.getClients()
       })
       .catch(error => {
         // Manejo de errores de la solicitud Fetch
@@ -146,8 +150,8 @@ export class DataService {
         fetch(`https://lab.app.invertebrado.co/api/subscribers/${id}`, options) 
       .then( async response => {
         const  Data = await response.json()
-        console.log(Data, 'este es mi console.log')
-        // this.getClients()
+        console.log(Data)        
+        this.getClients()
       })
       .catch(error => {
         // Manejo de errores de la solicitud Fetch
